@@ -6,4 +6,65 @@
     android:layout_height="match_parent"
     tools:context=".SecondQuestion">
 
+    <TextView
+        android:id="@+id/questionTwo
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Do you have any of the following medical conditions: Chronic kidney disease, COPD (chronic obstructive pulmonary disease), obesity (BMI >= 30), immunocompromised state, heart conditions (e.g., heart failure, cardiomyopathies), sickle cell disease, type 2 diabetes"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.203" />
+
+    <Button
+        android:id="@+id/answerBtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Yes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questionOne"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/answerBtn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answerBtn1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/answerBtn3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unsure"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answerBtn1"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/nextBtn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:onClick="nextQuestion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answerBtn3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
