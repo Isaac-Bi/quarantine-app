@@ -24,9 +24,6 @@ public class FirstQuestion extends AppCompatActivity {
         return questionOneChoice;
     }
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
