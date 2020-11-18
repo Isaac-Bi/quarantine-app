@@ -1,4 +1,4 @@
-package main.java.com.example.app;
+package com.example.app;
 
 /**
  * Class to implement individual answer choice, with associated risk score
@@ -13,7 +13,7 @@ public class Answer {
      * @param content of answer
      * @param riskScore associated risk score
      */
-    public Answer(content, riskScore) {
+    public Answer(String content, int riskScore) {
         this.content = content;
         this.riskScore = riskScore;
     }
