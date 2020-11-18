@@ -2,7 +2,11 @@ package com.example.app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class SecondQuestion extends AppCompatActivity {
     // Question Label
@@ -23,7 +27,7 @@ public class SecondQuestion extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_question);
+        setContentView(R.layout.activity_second_question);
 
         questionTwo = (TextView)findViewById(R.id.questionTwo);
         //Buttons for answer and next question
@@ -37,28 +41,28 @@ public class SecondQuestion extends AppCompatActivity {
         answer1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                questionOneChoice=2;
+                questionTwoChoice=2;
             }
         });
         answer2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                questionOneChoice=1;
+                questionTwoChoice=1;
             }
         });
         answer3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                questionOneChoice=0;
+                questionTwoChoice=0;
             }
         });
 
         //next question button
-        next1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),ThirdQuestion.class));
-            }
-        });
+//        next1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(getApplicationContext(),ThirdQuestion.class));
+//            }
+//        });
     }
 }
