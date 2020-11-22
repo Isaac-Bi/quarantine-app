@@ -1,5 +1,7 @@
 package com.example.app;
 
+import Answer;
+
 /**
  * Class to implement a question, with array of associated choices
  */

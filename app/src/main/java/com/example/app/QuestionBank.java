@@ -1,4 +1,6 @@
 package com.example.app;
+import Answer;
+import Question;
 
 public class QuestionBank {
     private Answer[] q1Answers = {
