@@ -1,4 +1,6 @@
-package main.java.com.example.app;
+package com.example.app;
+
+import Answer;
 
 /**
  * Class to implement a question, with array of associated choices
@@ -25,5 +27,9 @@ public class Question {
      */
     public String getPrompt() {
         return this.prompt;
+    }
+
+    public Answer[] getChoices() {
+        return this.choices;
     }
 }
