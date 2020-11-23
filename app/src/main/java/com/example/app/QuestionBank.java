@@ -1,6 +1,6 @@
 package com.example.app;
-import Answer;
-import Question;
+//import Answer;
+//import Question;
 
 public class QuestionBank {
     private Answer[] q1Answers = {
@@ -24,10 +24,8 @@ public class QuestionBank {
             )
     };
 
-    public Question getQuestionOne ()
-    {
-        return questions[0];
-    }
+    public Question getQuestionOne (){ return questions[0]; }
+
 
     public Question getQuestionTwo () {return questions[1];}
 
