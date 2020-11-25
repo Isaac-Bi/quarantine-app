@@ -12,6 +12,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class FirstQuestion extends AppCompatActivity {
     // Question Label
     private TextView questionOne;
@@ -25,38 +27,38 @@ public class FirstQuestion extends AppCompatActivity {
     Question firstQ;
     ListView lvAnswers1;
     Answer[] answers1;
-    String [] answersStr;
+    ArrayList<String> answersStr = new ArrayList<String>();
+    Answer rScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_question);
-
+        firstQ = q1.getQuestionOne();
         //Sets question
         questionOne = (TextView) findViewById(R.id.questionOne);
         questionOne.setText(firstQ.getPrompt());
 
 
-        //Listview for question 
-        firstQ = q1.getQuestionOne();
+        //Listview for question
         lvAnswers1=findViewById(R.id.LVAnswers1);
         answers1 = firstQ.getChoices();
-        answersStr = new String[this.answers1.length];
-        for(int i =0; i< answers1.length;i++){
-            answersStr[i]=answers1[i].getContent();
+
+        for(int i =0; i< answers1.length;i++)
+        {
+            answersStr.add(answers1[i].getContent());
         }
         ArrayAdapter<String> ansAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,answersStr);
         lvAnswers1.setAdapter(ansAdapter);
 
         //Listener for answer button
-        lvAnswers1.setOnItemClickListener(new  android.widget.AdapterView.OnItemClickListener() {
+        lvAnswers1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-
-                Answer response = (Answer)parent.getItemAtPosition(position);
-                int res = response.getRiskScore();
-                Toast.makeText(getApplicationContext(),"Clicked"+res,Toast.LENGTH_SHORT).show();
-
+            public void onItemClick(AdapterView<?> adapter, View view, final int position, long id) {
+                String response = (String)lvAnswers1.getItemAtPosition(position);
+                rScore = answers1[answersStr.indexOf(response)];
+                int score = rScore.getRiskScore();
+                Toast.makeText(getApplicationContext(),"Score "+score,Toast.LENGTH_SHORT).show();
             }
         });
 
