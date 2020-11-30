@@ -24,9 +24,10 @@ public class QuestionBank {
             )
     };
 
-    public Question getQuestionOne (){ return questions[0]; }
+    public Question getQuestion(int idx) {
+        return questions[idx];
+    }
 
 
-    public Question getQuestionTwo () {return questions[1];}
 
 }

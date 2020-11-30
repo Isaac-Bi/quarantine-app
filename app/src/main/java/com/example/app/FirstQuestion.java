@@ -35,7 +35,7 @@ public class FirstQuestion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_question);
-        firstQ = q1.getQuestionOne();
+        firstQ = q1.getQuestion(0);
         //Sets question
         questionOne = (TextView) findViewById(R.id.questionOne);
         questionOne.setText(firstQ.getPrompt());
@@ -60,7 +60,7 @@ public class FirstQuestion extends AppCompatActivity {
                 String response = (String)lvAnswers1.getItemAtPosition(position);
                 rScore = answers1[answersStr.indexOf(response)];
                 score = rScore.getRiskScore();
-                Toast.makeText(getApplicationContext(),"Score "+score,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(),"Score "+score,Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -70,6 +70,7 @@ public class FirstQuestion extends AppCompatActivity {
         next1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                UserData.getInstance().setScore(score);
                 startActivity(new Intent(getApplicationContext(),SecondQuestion.class));
             }
         });

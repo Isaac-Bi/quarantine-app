@@ -36,7 +36,7 @@ public class SecondQuestion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_question);
-        secondQ = q2.getQuestionTwo();
+        secondQ = q2.getQuestion(1);
         //Sets question
         questionTwo = (TextView) findViewById(R.id.questionTwo);
         questionTwo.setText(secondQ.getPrompt());
@@ -65,12 +65,13 @@ public class SecondQuestion extends AppCompatActivity {
             }
         });
 
-        //Next question button
+//        //Next question button
 //        next2 = (Button)findViewById(R.id.nextBtn2);
 //        //next question button
 //        next2.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
+//                UserData.getInstance().setScore(score);
 //                startActivity(new Intent(getApplicationContext(),ThirdQuestion.class));
 //            }
 //        });
