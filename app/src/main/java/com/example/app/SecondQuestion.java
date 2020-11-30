@@ -5,60 +5,70 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class SecondQuestion extends AppCompatActivity {
+
     // Question Label
     private TextView questionTwo;
-    //Three choices
-    private Button answer1;
-    private Button answer2;
-    private Button answer3;
-    private Button next1;
+    //Next Question button
+    private Button next2;
     //Number assigned to choice
     private int questionTwoChoice;
 
-    //Returns number assigned to each choice
-    public int getQuestionTwoChoice(){
-        return questionTwoChoice;
-    }
+    QuestionBank q2 = new QuestionBank();
+
+    Question secondQ;
+    ListView lvAnswers2;
+    Answer[] answers2;
+    ArrayList<String> answersStr = new ArrayList<String>();
+    Answer rScore;
+    int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_question);
-
-        questionTwo = (TextView)findViewById(R.id.questionTwo);
-        //Buttons for answer and next question
-        answer1 = (Button)findViewById(R.id.answerBtn1);
-        answer2 = (Button)findViewById(R.id.answerBtn2);
-        answer3 = (Button)findViewById(R.id.answerBtn3);
-        next1 = (Button)findViewById(R.id.nextBtn1);
+        secondQ = q2.getQuestionTwo();
+        //Sets question
+        questionTwo = (TextView) findViewById(R.id.questionTwo);
+        questionTwo.setText(secondQ.getPrompt());
 
 
-        //listeners for each button
-        answer1.setOnClickListener(new View.OnClickListener() {
+        //Listview for question
+        lvAnswers2=findViewById(R.id.LVAnswers2);
+        answers2 = secondQ.getChoices();
+
+        for(int i =0; i< answers2.length;i++)
+        {
+            answersStr.add(answers2[i].getContent());
+        }
+
+        ArrayAdapter<String> ansAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,answersStr);
+        lvAnswers2.setAdapter(ansAdapter);
+
+        //Listener for answer button
+        lvAnswers2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                questionTwoChoice=2;
+            public void onItemClick(AdapterView<?> adapter, View view, final int position, long id) {
+                String response = (String)lvAnswers2.getItemAtPosition(position);
+                rScore = answers2[answersStr.indexOf(response)];
+                score = rScore.getRiskScore();
+                Toast.makeText(getApplicationContext(),"Score "+score,Toast.LENGTH_SHORT).show();
             }
         });
-        answer2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                questionTwoChoice=1;
-            }
-        });
-        answer3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                questionTwoChoice=0;
-            }
-        });
 
-        //next question button
-//        next1.setOnClickListener(new View.OnClickListener() {
+        //Next question button
+//        next2 = (Button)findViewById(R.id.nextBtn2);
+//        //next question button
+//        next2.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
 //                startActivity(new Intent(getApplicationContext(),ThirdQuestion.class));
