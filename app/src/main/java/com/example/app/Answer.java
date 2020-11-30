@@ -1,4 +1,5 @@
 package com.example.app;
+import UserData;
 
 /**
  * Class to implement individual answer choice, with associated risk score
