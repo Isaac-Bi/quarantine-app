@@ -28,7 +28,6 @@ public class SecondQuestion extends AppCompatActivity {
     Question secondQ;
     ListView lvAnswers2;
     Answer[] answers2;
-    ArrayList<String> answersStr = new ArrayList<String>();
     Answer rScore;
     int score;
 
@@ -46,34 +45,29 @@ public class SecondQuestion extends AppCompatActivity {
         lvAnswers2=findViewById(R.id.LVAnswers2);
         answers2 = secondQ.getChoices();
 
-        for(int i =0; i< answers2.length;i++)
-        {
-            answersStr.add(answers2[i].getContent());
-        }
-
-        ArrayAdapter<String> ansAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,answersStr);
+        AnswerArrayAdapter ansAdapter = new AnswerArrayAdapter(this, android.R.layout.simple_list_item_1, answers2);
         lvAnswers2.setAdapter(ansAdapter);
 
         //Listener for answer button
         lvAnswers2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, final int position, long id) {
-                String response = (String)lvAnswers2.getItemAtPosition(position);
-                rScore = answers2[answersStr.indexOf(response)];
+                Answer response = (Answer)lvAnswers2.getItemAtPosition(position);
+                rScore = answers2[answersStr.indexOf(response.getContent())];
                 score = rScore.getRiskScore();
-                Toast.makeText(getApplicationContext(),"Score "+score,Toast.LENGTH_SHORT).show();
+
             }
         });
 
-//        //Next question button
-//        next2 = (Button)findViewById(R.id.nextBtn2);
-//        //next question button
-//        next2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                UserData.getInstance().setScore(score);
-//                startActivity(new Intent(getApplicationContext(),ThirdQuestion.class));
-//            }
-//        });
+        //Next question button
+        next2 = (Button)findViewById(R.id.nextBtn2);
+        //next question button
+        next2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UserData.getInstance().setScore(score);
+                startActivity(new Intent(getApplicationContext(),ThirdQuestion.class));
+            }
+        });
     }
 }
