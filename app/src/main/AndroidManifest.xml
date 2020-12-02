@@ -11,6 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App">
+        <activity android:name=".FinalPage"></activity>
+        <activity android:name=".TenthQuestion" />
+        <activity android:name=".NinthQuestion" />
+        <activity android:name=".EighthQuestion" />
+        <activity android:name=".SeventhQuestion" />
+        <activity android:name=".SixthQuestion" />
+        <activity android:name=".FifthQuestion" />
+        <activity android:name=".FourthQuestion" />
+        <activity android:name=".ThirdQuestion" />
         <activity android:name=".SecondQuestion" />
         <activity android:name=".FirstQuestion" />
         <activity android:name=".Register" />

@@ -14,20 +14,19 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class SecondQuestion extends AppCompatActivity {
-
+public class FifthQuestion extends AppCompatActivity {
     // Question Label
-    private TextView questionTwo;
+    private TextView questionFive;
     //Next Question button
-    private Button next2;
+    private Button next5;
     //Number assigned to choice
-    private int questionTwoChoice;
+    private int questionFiveChoice;
 
-    QuestionBank q2 = new QuestionBank();
+    QuestionBank q5 = new QuestionBank();
 
-    Question secondQ;
-    ListView lvAnswers2;
-    Answer[] answers2;
+    Question fifthQ;
+    ListView lvAnswers5;
+    Answer[] answers5;
     ArrayList<String> answersStr = new ArrayList<String>();
     Answer rScore;
     int score;
@@ -35,44 +34,44 @@ public class SecondQuestion extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second_question);
-        secondQ = q2.getQuestion(1);
+        setContentView(R.layout.activity_fifth_question);
+        fifthQ = q5.getQuestion(4);
         //Sets question
-        questionTwo = (TextView) findViewById(R.id.questionTwo);
-        questionTwo.setText(secondQ.getPrompt());
+        questionFive = (TextView) findViewById(R.id.questionFive);
+        questionFive.setText(fifthQ.getPrompt());
 
 
         //Listview for question
-        lvAnswers2=findViewById(R.id.LVAnswers2);
-        answers2 = secondQ.getChoices();
+        lvAnswers5=findViewById(R.id.LVAnswers5);
+        answers5 = fifthQ.getChoices();
 
-        for(int i =0; i< answers2.length;i++)
+        for(int i =0; i< answers5.length;i++)
         {
-            answersStr.add(answers2[i].getContent());
+            answersStr.add(answers5[i].getContent());
         }
 
         ArrayAdapter<String> ansAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,answersStr);
-        lvAnswers2.setAdapter(ansAdapter);
+        lvAnswers5.setAdapter(ansAdapter);
 
         //Listener for answer button
-        lvAnswers2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvAnswers5.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, final int position, long id) {
-                String response = (String)lvAnswers2.getItemAtPosition(position);
-                rScore = answers2[answersStr.indexOf(response)];
+                String response = (String)lvAnswers5.getItemAtPosition(position);
+                rScore = answers5[answersStr.indexOf(response)];
                 score = rScore.getRiskScore();
                 Toast.makeText(getApplicationContext(),"Score "+score,Toast.LENGTH_SHORT).show();
             }
         });
 
         //Next question button
-        next2 = (Button)findViewById(R.id.nextBtn2);
+        next5 = (Button)findViewById(R.id.nextBtn5);
         //next question button
-        next2.setOnClickListener(new View.OnClickListener() {
+        next5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 UserData.getInstance().setScore(score);
-                startActivity(new Intent(getApplicationContext(),ThirdQuestion.class));
+                startActivity(new Intent(getApplicationContext(),SixthQuestion.class));
             }
         });
     }
