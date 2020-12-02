@@ -45,22 +45,17 @@ public class NinthQuestion extends AppCompatActivity {
         lvAnswers9=findViewById(R.id.LVAnswers9);
         answers9 = ninthQ.getChoices();
 
-        for(int i =0; i< answers9.length;i++)
-        {
-            answersStr.add(answers9[i].getContent());
-        }
-
-        ArrayAdapter<String> ansAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,answersStr);
+        AnswerArrayAdapter ansAdapter = new AnswerArrayAdapter(this, android.R.layout.simple_list_item_1, answers9);
         lvAnswers9.setAdapter(ansAdapter);
 
         //Listener for answer button
         lvAnswers9.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, final int position, long id) {
-                String response = (String)lvAnswers9.getItemAtPosition(position);
-                rScore = answers9[answersStr.indexOf(response)];
+                Answer response = (Answer)lvAnswers9.getItemAtPosition(position);
+                rScore = answers9[answersStr.indexOf(response.getContent())];
                 score = rScore.getRiskScore();
-                Toast.makeText(getApplicationContext(),"Score "+score,Toast.LENGTH_SHORT).show();
+
             }
         });
 

@@ -45,22 +45,17 @@ public class ThirdQuestion extends AppCompatActivity {
         lvAnswers3=findViewById(R.id.LVAnswers3);
         answers3 = thirdQ.getChoices();
 
-        for(int i =0; i< answers3.length;i++)
-        {
-            answersStr.add(answers3[i].getContent());
-        }
-
-        ArrayAdapter<String> ansAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,answersStr);
+        AnswerArrayAdapter ansAdapter = new AnswerArrayAdapter(this, android.R.layout.simple_list_item_1, answers3);
         lvAnswers3.setAdapter(ansAdapter);
 
         //Listener for answer button
         lvAnswers3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, final int position, long id) {
-                String response = (String)lvAnswers3.getItemAtPosition(position);
-                rScore = answers3[answersStr.indexOf(response)];
+                Answer response = (Answer)lvAnswers3.getItemAtPosition(position);
+                rScore = answers3[answersStr.indexOf(response.getContent())];
                 score = rScore.getRiskScore();
-                Toast.makeText(getApplicationContext(),"Score "+score,Toast.LENGTH_SHORT).show();
+
             }
         });
 

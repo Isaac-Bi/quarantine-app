@@ -45,22 +45,17 @@ public class FifthQuestion extends AppCompatActivity {
         lvAnswers5=findViewById(R.id.LVAnswers5);
         answers5 = fifthQ.getChoices();
 
-        for(int i =0; i< answers5.length;i++)
-        {
-            answersStr.add(answers5[i].getContent());
-        }
-
-        ArrayAdapter<String> ansAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,answersStr);
+        AnswerArrayAdapter ansAdapter = new AnswerArrayAdapter(this, android.R.layout.simple_list_item_1, answers5);
         lvAnswers5.setAdapter(ansAdapter);
 
         //Listener for answer button
         lvAnswers5.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, final int position, long id) {
-                String response = (String)lvAnswers5.getItemAtPosition(position);
-                rScore = answers5[answersStr.indexOf(response)];
+                Answer response = (Answer)lvAnswers5.getItemAtPosition(position);
+                rScore = answers5[answersStr.indexOf(response.getContent())];
                 score = rScore.getRiskScore();
-                Toast.makeText(getApplicationContext(),"Score "+score,Toast.LENGTH_SHORT).show();
+
             }
         });
 
