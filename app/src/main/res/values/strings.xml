@@ -6,16 +6,23 @@
     <string name="next">Next</string>
     <string name="main_start_prompt">You have not taken your Risk Factor Test yet</string>
     <string name="heart_description">A heart with a hospital pulse running through it</string>
-    <string name="test_description"> The test will be comprised of a series of short questions
-        asking about your lifestyle and behavior during COVID-19. At the very end,
-        we'll give you a score based on your responses and assess your risk factor.</string>
+    <string name="test_description"> The test will be comprised of a series of short questions asking about your lifestyle and behavior during COVID-19. At the very end, we will give you a score based on your responses and assess your risk factor.</string>
+    <string name="login_title">COAVITION Risk Factor Test</string>
 
     <!-- Risk Score analysis -->
     <string name="risk_score">Your Risk Score</string>
     <string name="breakdown">Breakdown</string>
     <string name="low">Low</string>
+    <string name="low_description"></string>
+
     <string name="mild">Mild</string>
+
+
     <string name="moderate">Moderate</string>
+
+
     <string name="high">High</string>
+
+
     <string name="extreme">Extreme</string>
 </resources>
