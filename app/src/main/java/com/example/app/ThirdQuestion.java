@@ -44,7 +44,10 @@ public class ThirdQuestion extends AppCompatActivity {
         //Listview for question
         lvAnswers3=findViewById(R.id.LVAnswers3);
         answers3 = thirdQ.getChoices();
-
+        for(int i =0; i< answers3.length;i++)
+        {
+            answersStr.add(answers3[i].getContent());
+        }
         AnswerArrayAdapter ansAdapter = new AnswerArrayAdapter(this, android.R.layout.simple_list_item_1, answers3);
         lvAnswers3.setAdapter(ansAdapter);
 

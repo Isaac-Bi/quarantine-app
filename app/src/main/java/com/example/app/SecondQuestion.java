@@ -29,6 +29,7 @@ public class SecondQuestion extends AppCompatActivity {
     ListView lvAnswers2;
     Answer[] answers2;
     Answer rScore;
+    ArrayList<String> answersStr = new ArrayList<String>();
     int score;
 
     @Override
@@ -45,6 +46,10 @@ public class SecondQuestion extends AppCompatActivity {
         lvAnswers2=findViewById(R.id.LVAnswers2);
         answers2 = secondQ.getChoices();
 
+        for(int i =0; i< answers2.length;i++)
+        {
+            answersStr.add(answers2[i].getContent());
+        }
         AnswerArrayAdapter ansAdapter = new AnswerArrayAdapter(this, android.R.layout.simple_list_item_1, answers2);
         lvAnswers2.setAdapter(ansAdapter);
 

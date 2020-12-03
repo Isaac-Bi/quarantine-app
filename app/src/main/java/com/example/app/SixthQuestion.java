@@ -44,7 +44,10 @@ public class SixthQuestion extends AppCompatActivity {
         //Listview for question
         lvAnswers6=findViewById(R.id.LVAnswers6);
         answers6 = sixthQ.getChoices();
-
+        for(int i =0; i< answers6.length;i++)
+        {
+            answersStr.add(answers6[i].getContent());
+        }
         AnswerArrayAdapter ansAdapter = new AnswerArrayAdapter(this, android.R.layout.simple_list_item_1, answers6);
         lvAnswers6.setAdapter(ansAdapter);
 
