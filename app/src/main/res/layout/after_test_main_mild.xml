@@ -31,23 +31,23 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Low"
+        android:text="Mild"
         android:fontFamily="@font/extrabold"
         android:textSize="30sp"
-        android:textColor="@color/green"
-        app:layout_constraintBottom_toTopOf="@+id/low_circle"
+        android:textColor="@color/mild_blue"
+        app:layout_constraintBottom_toTopOf="@+id/mild_circle"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
     <TextView
-        android:id="@+id/low_circle"
+        android:id="@+id/mild_circle"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:background="@drawable/low_circle"
+        android:background="@drawable/mild_circle"
         android:fontFamily="@font/semibold"
         android:gravity="center"
-        android:text="4"
-        android:textColor="@color/green"
+        android:text="11"
+        android:textColor="@color/mild_blue"
         android:textSize="80sp"
         app:layout_constraintBottom_toTopOf="@+id/breakdown_image"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -62,7 +62,7 @@
         app:layout_constraintBottom_toTopOf="@+id/breakdown_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/low_circle" />
+        app:layout_constraintTop_toBottomOf="@+id/mild_circle" />
 
     <TextView
         android:id="@+id/breakdown_text"
@@ -77,9 +77,8 @@
         app:layout_constraintBottom_toTopOf="@+id/breakdown_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/low_circle"
+        app:layout_constraintTop_toBottomOf="@+id/mild_circle"
         />
-    
     <ImageView
         android:id="@+id/breakdown_image"
         android:layout_width="250dp"
