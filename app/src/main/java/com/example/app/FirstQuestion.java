@@ -1,16 +1,14 @@
 package com.example.app;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -50,17 +48,21 @@ public class FirstQuestion extends AppCompatActivity {
             answersStr.add(answers1[i].getContent());
         }
 
-        ArrayAdapter<String> ansAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,answersStr);
+
+        //ArrayAdapter<String> ansAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,answersStr);
+        AnswerArrayAdapter ansAdapter = new AnswerArrayAdapter(this, android.R.layout.simple_list_item_1, answers1);
+
         lvAnswers1.setAdapter(ansAdapter);
 
         //Listener for answer button
         lvAnswers1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, final int position, long id) {
-                String response = (String)lvAnswers1.getItemAtPosition(position);
-                rScore = answers1[answersStr.indexOf(response)];
+                Answer response = (Answer) lvAnswers1.getItemAtPosition(position);
+                rScore = answers1[answersStr.indexOf(response.getContent())];
                 score = rScore.getRiskScore();
-//                Toast.makeText(getApplicationContext(),"Score "+score,Toast.LENGTH_SHORT).show();
+
+                // Toast.makeText(getApplicationContext(),"Score "+score,Toast.LENGTH_SHORT).show();
             }
         });
 
