@@ -42,7 +42,10 @@ public class FifthQuestion extends AppCompatActivity {
         //Listview for question
         lvAnswers5=findViewById(R.id.LVAnswers5);
         answers5 = fifthQ.getChoices();
-
+        for(int i =0; i< answers5.length;i++)
+        {
+            answersStr.add(answers5[i].getContent());
+        }
         AnswerArrayAdapter ansAdapter = new AnswerArrayAdapter(this, android.R.layout.simple_list_item_1, answers5);
         lvAnswers5.setAdapter(ansAdapter);
 

@@ -44,7 +44,10 @@ public class EighthQuestion extends AppCompatActivity {
         //Listview for question
         lvAnswers8=findViewById(R.id.LVAnswers8);
         answers8 = eighthQ.getChoices();
-
+        for(int i =0; i< answers8.length;i++)
+        {
+            answersStr.add(answers8[i].getContent());
+        }
         AnswerArrayAdapter ansAdapter = new AnswerArrayAdapter(this, android.R.layout.simple_list_item_1, answers8);
         lvAnswers8.setAdapter(ansAdapter);
 

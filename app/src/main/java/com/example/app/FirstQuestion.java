@@ -47,9 +47,6 @@ public class FirstQuestion extends AppCompatActivity {
         {
             answersStr.add(answers1[i].getContent());
         }
-
-
-        //ArrayAdapter<String> ansAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,answersStr);
         AnswerArrayAdapter ansAdapter = new AnswerArrayAdapter(this, android.R.layout.simple_list_item_1, answers1);
 
         lvAnswers1.setAdapter(ansAdapter);

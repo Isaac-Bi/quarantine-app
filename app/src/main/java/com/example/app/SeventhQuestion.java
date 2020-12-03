@@ -44,7 +44,10 @@ public class SeventhQuestion extends AppCompatActivity {
         //Listview for question
         lvAnswers7=findViewById(R.id.LVAnswers7);
         answers7 = seventhQ.getChoices();
-
+        for(int i =0; i< answers7.length;i++)
+        {
+            answersStr.add(answers7[i].getContent());
+        }
         AnswerArrayAdapter ansAdapter = new AnswerArrayAdapter(this, android.R.layout.simple_list_item_1, answers7);
         lvAnswers7.setAdapter(ansAdapter);
 
