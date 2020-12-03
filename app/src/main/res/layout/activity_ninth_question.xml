@@ -4,40 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/deep_blue"
     tools:context=".NinthQuestion"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp">
+    android:orientation="vertical">
+
+    <include layout="@layout/header" />
 
     <TextView
         android:id="@+id/questionNine"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/deep_blue"
+        android:fontFamily="@font/semibold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_margin="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         android:gravity="center"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.203"
+        android:textSize="24sp"
         android:textIsSelectable="true" />
 
     <ListView
         android:id="@+id/LVAnswers9"
-        android:layout_width="wrap_content"
-        android:layout_height="311dp" />
+        android:listSelector="@drawable/list_view_selector"
+        android:fontFamily="@font/semibold"
+        android:dividerHeight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/deep_blue"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:layout_weight="0"/>
 
     <Button
         android:id="@+id/nextBtn9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/regular"
+        android:textSize="22sp"
         android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:background="@drawable/teal_rounded_button"
+        android:layout_gravity="right"
+        android:layout_weight="0"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"/>
 
 
 </LinearLayout>
