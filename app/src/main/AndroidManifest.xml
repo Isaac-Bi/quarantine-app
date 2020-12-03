@@ -11,6 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.App">
+        <activity android:name=".AfterTestMainExtreme"></activity>
+        <activity android:name=".AfterTestMainHigh" />
+        <activity android:name=".AfterTestMainModerate" />
+        <activity android:name=".AfterTestMainMild" />
+        <activity android:name=".AfterTestMainLow" />
         <activity android:name=".TenthQuestion" />
         <activity android:name=".NinthQuestion" />
         <activity android:name=".EighthQuestion" />
