@@ -17,9 +17,8 @@ public class QuestionBank {
     private Question[] questions = {
             new Question("Do you wear a mask each time you head outside?", q1Answers),
             new Question("Do you have any of the following medical conditions: " +
-                    "Chronic kidney disease, COPD (chronic obstructive pulmonary disease), " +
-                    "obesity (BMI >= 30), immunocompromised state, heart conditions (e.g., " +
-                    "heart failure, cardiomyopathies), sickle cell disease, type 2 diabetes",
+                    "Chronic kidney disease, chronic obstructive pulmonary disease, " +
+                    "obesity, immunocompromised state, heart conditions, sickle cell, type 2 diabetes",
                     q2Answers
             )
     };

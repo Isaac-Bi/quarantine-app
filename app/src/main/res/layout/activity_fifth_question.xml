@@ -11,7 +11,7 @@
     <include layout="@layout/header" />
 
     <TextView
-        android:id="@+id/questionSix"
+        android:id="@+id/questionFive"
         android:background="@drawable/rounded_button"
         android:textColor="@color/deep_blue"
         android:fontFamily="@font/semibold"
@@ -25,7 +25,7 @@
         android:textIsSelectable="true" />
 
     <ListView
-        android:id="@+id/LVAnswers6"
+        android:id="@+id/LVAnswers5"
         android:listSelector="@drawable/list_view_selector"
         android:fontFamily="@font/semibold"
         android:dividerHeight="20dp"
@@ -37,7 +37,7 @@
         android:layout_weight="0"/>
 
     <Button
-        android:id="@+id/nextBtn6"
+        android:id="@+id/nextBtn5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/regular"
