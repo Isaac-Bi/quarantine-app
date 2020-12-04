@@ -69,7 +69,26 @@ public class NinthQuestion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 UserData.getInstance().setScore(score);
-                startActivity(new Intent(getApplicationContext(),TenthQuestion.class));
+                if((UserData.getInstance().getScore() >= 0) && (UserData.getInstance().getScore() <= 10)){
+                    startActivity(new Intent(getApplicationContext(),AfterTestMainLow.class));
+                }
+                else if((UserData.getInstance().getScore() >= 11)&&(UserData.getInstance().getScore() <= 20))
+                {
+                    startActivity(new Intent(getApplicationContext(),AfterTestMainMild.class));
+                }
+                else if((UserData.getInstance().getScore() >= 21) && (UserData.getInstance().getScore() <= 30))
+                {
+                    startActivity(new Intent(getApplicationContext(),AfterTestMainModerate.class));
+                }
+                else if((UserData.getInstance().getScore() >= 31) && (UserData.getInstance().getScore() <= 40))
+                {
+                    startActivity(new Intent(getApplicationContext(),AfterTestMainHigh.class));
+                }
+                else if((UserData.getInstance().getScore() >= 41) && (UserData.getInstance().getScore() <= 50))
+                {
+                    startActivity(new Intent(getApplicationContext(),AfterTestMainExtreme.class));
+                }
+
             }
         });
     }
