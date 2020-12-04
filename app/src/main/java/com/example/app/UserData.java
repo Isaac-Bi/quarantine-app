@@ -10,6 +10,10 @@ public class UserData {
         this.riskScore += factor;
     }
 
+    public void resetScore() {
+        this.riskScore = 0;
+    }
+
     private static final UserData data = new UserData();
     public static UserData getInstance() {
         return data;

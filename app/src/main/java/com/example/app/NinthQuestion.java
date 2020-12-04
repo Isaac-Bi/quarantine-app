@@ -1,16 +1,14 @@
 package com.example.app;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -69,7 +67,26 @@ public class NinthQuestion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 UserData.getInstance().setScore(score);
-                startActivity(new Intent(getApplicationContext(),TenthQuestion.class));
+                if((UserData.getInstance().getScore() >= 0) && (UserData.getInstance().getScore() <= 10)){
+                    startActivity(new Intent(getApplicationContext(),AfterTestMainLow.class));
+                }
+                else if((UserData.getInstance().getScore() >= 11) && (UserData.getInstance().getScore() <= 29))
+                {
+                    startActivity(new Intent(getApplicationContext(),AfterTestMainMild.class));
+                }
+                else if((UserData.getInstance().getScore() >= 30) && (UserData.getInstance().getScore() <= 49))
+                {
+                    startActivity(new Intent(getApplicationContext(),AfterTestMainModerate.class));
+                }
+                else if((UserData.getInstance().getScore() >= 50) && (UserData.getInstance().getScore() <= 69))
+                {
+                    startActivity(new Intent(getApplicationContext(),AfterTestMainHigh.class));
+                }
+                else if((UserData.getInstance().getScore() >= 70))
+                {
+                    startActivity(new Intent(getApplicationContext(),AfterTestMainExtreme.class));
+                }
+
             }
         });
     }

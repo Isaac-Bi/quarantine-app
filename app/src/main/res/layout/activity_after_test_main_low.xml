@@ -46,7 +46,6 @@
         android:background="@drawable/low_circle"
         android:fontFamily="@font/semibold"
         android:gravity="center"
-        android:text="4"
         android:textColor="@color/green"
         android:textSize="80sp"
         app:layout_constraintBottom_toTopOf="@+id/breakdown_image"
@@ -79,7 +78,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/low_circle"
         />
-    
+
     <ImageView
         android:id="@+id/breakdown_image"
         android:layout_width="250dp"
@@ -101,23 +100,22 @@
         android:layout_height="wrap_content"
         android:textColor="@color/blue_text"
         android:fontFamily="@font/regular"
-        android:text="@string/test_description"
+        android:text="@string/low_description"
         android:textSize="16sp"
         android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/quizButton"
+        app:layout_constraintBottom_toTopOf="@+id/low_retake"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/breakdown_image" />
 
     <Button
-        android:id="@+id/quizButton"
+        android:id="@+id/low_retake"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/green_rounded_button"
         android:padding="16dp"
         android:textSize="18sp"
-        android:onClick="takeQuiz"
         android:textAllCaps="false"
         android:fontFamily="@font/regular"
         android:text="@string/retake_quiz"
@@ -138,7 +136,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quizButton"
+        app:layout_constraintTop_toBottomOf="@+id/low_retake"
         app:layout_constraintVertical_bias="0.506" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,6 @@
         <activity android:name=".AfterTestMainModerate" />
         <activity android:name=".AfterTestMainMild" />
         <activity android:name=".AfterTestMainLow" />
-        <activity android:name=".TenthQuestion" />
         <activity android:name=".NinthQuestion" />
         <activity android:name=".EighthQuestion" />
         <activity android:name=".SeventhQuestion" />

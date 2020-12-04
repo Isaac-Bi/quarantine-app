@@ -13,16 +13,18 @@
     <string name="risk_score">Your Risk Score</string>
     <string name="breakdown">Breakdown</string>
     <string name="low">Low</string>
-    <string name="low_description"></string>
+    <string name="low_description">You have been taking very little risks during COVID-19. For the most part you have been quarantining indoors and limiting your exposure to friends, family, and strangers. In the event that you do have to go outside, you follow all mask procedures and social distancing. Great job in keeping safe during these times, but be sure to continue staying vigilant. </string>
 
     <string name="mild">Mild</string>
-
+    <string name="mild_description">You have generally been following all mask procedures. You may go out occasionally when necessary such as for grocery shopping or to visit friends and family, but you generally keep your gatherings to less than 5 people. Although you might be keeping your social circle small, know that every single person in your circle has their own circle as well. Even when having gatherings with people you trust, make sure that you’re all wearing masks and appropriately social distancing. </string>
 
     <string name="moderate">Moderate</string>
-
+    <string name="moderate_description">If you are an essential worker, you will already be put within moderate risk even if you follow all mask guidelines and properly social distance in your personal life. If you are not an essential worker, you may have a larger social circle than is safe. Be careful within gatherings, even if you know them if they are not within your household you will still be at risk if you do not wear a mask or properly social distance. </string>
 
     <string name="high">High</string>
+    <string name="high_description">You may be an essential worker or a healthcare worker. If you are not, you may have a larger social circle than is safe. Be careful within gatherings, even if you know them, if they are not within your household you will still be at risk if you do not wear a mask or properly social distance. </string>
 
 
     <string name="extreme">Extreme</string>
+    <string name="extreme_description">You may be an essential worker or a healthcare worker. If you are not, you might be participating in riskier behavior than you realize. Not properly following mask procedures and not social distancing is a major risk factor for COVID. However the biggest risk factor of all is consistent contact with large groups mostly amongst strangers. Eating indoors in restaurants, going to the gym, or continuing to host gatherings with more than 20+ people can be dangerous. Consider safer alternatives such as getting take out, dining outside, working out at home, and having one on one meetups instead of hosting large gatherings. </string>
 </resources>

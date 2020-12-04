@@ -64,16 +64,15 @@
 
     <Button
         android:id="@+id/createAcc"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
         android:background="@drawable/rounded_button"
+        android:padding="16dp"
         android:text="Create Account"
-        android:textColor="@color/white"
+        android:fontFamily="@font/semibold"
+        android:textColor="@color/sunset"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
         app:layout_constraintVertical_bias="0.288" />
