@@ -8,6 +8,7 @@ public class UserData {
 
     public void setScore(int factor) {
         this.riskScore += factor;
+        System.out.println(riskScore);
     }
 
     private static final UserData data = new UserData();

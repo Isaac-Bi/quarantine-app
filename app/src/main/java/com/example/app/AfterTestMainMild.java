@@ -17,7 +17,7 @@ public class AfterTestMainMild extends AppCompatActivity {
         setContentView(R.layout.activity_after_test_main_mild);
 
         mildText = (TextView) findViewById(R.id.mildText);
-        mildText.setText(UserData.getInstance().getScore());
+        mildText.setText(String.valueOf(UserData.getInstance().getScore()));
 
         //Next question button
         homeBtnMild = (Button)findViewById(R.id.homeBtnMild);

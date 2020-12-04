@@ -35,6 +35,7 @@ public class QuestionBank {
             new Answer("Office worker(no customer interaction)", 5),
             new Answer("Remote worker(no contact with others)", 0),
             new Answer("Essential worker(retail, food service, transportation)-customer interaction", 20),
+            new Answer("Unemployed", 0),
             new Answer("Healthcare worker", 30),
     };
     private Answer[] q8Answers = {
