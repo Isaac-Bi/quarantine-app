@@ -17,7 +17,7 @@ public class AfterTestMainModerate extends AppCompatActivity {
         setContentView(R.layout.activity_after_test_main_moderate);
 
         moderateText = (TextView) findViewById(R.id.moderateText);
-        moderateText.setText(UserData.getInstance().getScore());
+        moderateText.setText(String.valueOf(UserData.getInstance().getScore()));
 
         //Next question button
         homeBtnModerate = (Button)findViewById(R.id.homeBtnModerate);

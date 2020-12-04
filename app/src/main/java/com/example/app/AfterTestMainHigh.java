@@ -16,8 +16,8 @@ public class AfterTestMainHigh extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_after_test_main_high);
 
-        highText = (TextView) findViewById(R.id.extremeText);
-        highText.setText(UserData.getInstance().getScore());
+        highText = (TextView) findViewById(R.id.highText);
+        highText.setText(String.valueOf(UserData.getInstance().getScore()));
 
         //Next question button
         homeBtnHigh = (Button)findViewById(R.id.homeBtnHigh);

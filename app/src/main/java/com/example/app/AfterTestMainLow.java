@@ -17,7 +17,7 @@ public class AfterTestMainLow extends AppCompatActivity {
         setContentView(R.layout.activity_after_test_main_low);
 
         lowText = (TextView) findViewById(R.id.lowText);
-        lowText.setText(UserData.getInstance().getScore());
+        lowText.setText(String.valueOf(UserData.getInstance().getScore()));
 
         //Next question button
         homeBtnLow = (Button)findViewById(R.id.homeBtnLow);

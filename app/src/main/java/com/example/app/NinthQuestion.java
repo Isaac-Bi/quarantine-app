@@ -72,7 +72,7 @@ public class NinthQuestion extends AppCompatActivity {
                 if((UserData.getInstance().getScore() >= 0) && (UserData.getInstance().getScore() <= 10)){
                     startActivity(new Intent(getApplicationContext(),AfterTestMainLow.class));
                 }
-                else if((UserData.getInstance().getScore() >= 11)&&(UserData.getInstance().getScore() <= 20))
+                else if((UserData.getInstance().getScore() >= 11) && (UserData.getInstance().getScore() <= 20))
                 {
                     startActivity(new Intent(getApplicationContext(),AfterTestMainMild.class));
                 }
@@ -84,7 +84,7 @@ public class NinthQuestion extends AppCompatActivity {
                 {
                     startActivity(new Intent(getApplicationContext(),AfterTestMainHigh.class));
                 }
-                else if((UserData.getInstance().getScore() >= 41) && (UserData.getInstance().getScore() <= 50))
+                else if((UserData.getInstance().getScore() >= 41))
                 {
                     startActivity(new Intent(getApplicationContext(),AfterTestMainExtreme.class));
                 }
